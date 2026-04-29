@@ -1,52 +1,54 @@
-# Next.js Technical Iteration 1 Starter
+# Visual System Iteration
 
-This repository is the first technical iteration of the future landing project.
+Текущая итерация проекта фиксирует базовую визуальную систему будущего лендинга без сборки полноценных маркетинговых блоков.
 
-Goal of this stage: verify the full workflow works end-to-end:
-- local run in Cursor;
-- code versioning in GitHub;
-- deployment in Vercel.
+## Выбранное направление
 
-At this point, the project intentionally includes only a minimal, clean skeleton (no design system, no marketing blocks, no lead form, no extra integrations).
+**Structured tech / AI workflow**
 
-## Run locally
+Ключевая идея: современный и структурный product UI с ощущением маршрута, этапов и управляемого процесса обучения.
 
-1. Install dependencies:
+## Ключевые визуальные принципы
+
+- Тёмная база (graphite / deep navy / charcoal), светлый контрастный текст.
+- Акценты: electric blue, soft violet, cyan, с дозированным применением.
+- Сильная типографическая иерархия, спокойный читаемый body-текст, точечный mono для micro-элементов.
+- Компоненты как системные блоки: чистые кнопки, product-like карточки, мягкие border/glow и route-like разделители.
+- Без heavy neon, cyberpunk и декоративного перегруза.
+
+## Где смотреть style guide
+
+- Страница визуальной системы: `http://localhost:3000/style-guide`
+- Route в проекте: `app/style-guide/page.tsx`
+
+## Базовые компоненты
+
+Созданы переиспользуемые блоки в `components/ui`:
+
+- `Container`
+- `Section`
+- `SectionHeading`
+- `Button`
+- `Card`
+- `Badge`
+- `Divider`
+- `StepItem`
+
+## Токены и как использовать дальше
+
+Базовые токены/переменные находятся в `app/globals.css`:
+
+- цвета (bg, surface, border, text, muted, accent);
+- типографическая шкала;
+- spacing/radius;
+- shadow/subtle glow;
+- container widths и section spacing.
+
+Следующие итерации лендинга собираются поверх этих компонентов и токенов: новые секции стоит строить из `Section`, `SectionHeading`, `Card`, `Button`, сохраняя текущую иерархию и контраст.
+
+## Локальный запуск
 
 ```bash
 npm install
-```
-
-2. Start development server:
-
-```bash
 npm run dev
 ```
-
-3. Open:
-
-`http://localhost:3000`
-
-Expected text on the page:
-- `Project is running`
-- `Next.js + GitHub + Vercel setup successful`
-
-## Build for production
-
-```bash
-npm run build
-```
-
-Optional local production check:
-
-```bash
-npm run start
-```
-
-## What counts as success for this iteration
-
-This iteration is successful when:
-- the app starts locally without errors;
-- the repository can be committed and pushed to GitHub;
-- Vercel deploys the project successfully from GitHub;
-- the deployed page shows the technical placeholder text.
