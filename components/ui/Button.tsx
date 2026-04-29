@@ -15,7 +15,12 @@ export function Button({ children, variant = "primary", className, type = "butto
   }[variant];
 
   return (
-    <button type={type} className={["ui-button", variantClass, className].filter(Boolean).join(" ")} {...props}>
+    <button
+      type={type}
+      data-variant={variant}
+      className={["ui-button", variantClass, className].filter(Boolean).join(" ")}
+      {...props}
+    >
       {children}
     </button>
   );
