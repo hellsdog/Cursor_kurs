@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -14,9 +14,32 @@ const jetBrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+function getMetadataBase(): URL | undefined {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL;
+  if (!raw) return undefined;
+  try {
+    const normalized = raw.endsWith("/") ? raw.slice(0, -1) : raw;
+    return new URL(normalized);
+  } catch {
+    return undefined;
+  }
+}
+
 export const metadata: Metadata = {
-  title: "Landing Visual System",
-  description: "Structured tech / AI workflow visual system on Next.js",
+  metadataBase: getMetadataBase(),
+  title: {
+    default: "AI Landing Course",
+    template: "%s · AI Landing Course",
+  },
+  description: "Визуальная система и UI-компоненты проекта на Next.js.",
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a1020",
 };
 
 export default function RootLayout({

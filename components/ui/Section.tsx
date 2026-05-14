@@ -1,14 +1,17 @@
-import { ReactNode } from "react";
+import { HTMLAttributes, ReactNode } from "react";
 import { Container } from "@/components/ui/Container";
 
 type SectionProps = {
   children: ReactNode;
-  className?: string;
   withContainer?: boolean;
-};
+} & HTMLAttributes<HTMLElement>;
 
-export function Section({ children, className, withContainer = true }: SectionProps) {
+export function Section({ children, className, withContainer = true, ...props }: SectionProps) {
   const content = withContainer ? <Container>{children}</Container> : children;
 
-  return <section className={["ui-section", className].filter(Boolean).join(" ")}>{content}</section>;
+  return (
+    <section className={["ui-section", className].filter(Boolean).join(" ")} {...props}>
+      {content}
+    </section>
+  );
 }

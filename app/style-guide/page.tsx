@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   Badge,
   Button,
@@ -14,6 +15,11 @@ import {
   TextLink,
   Textarea,
 } from "@/components/ui";
+
+export const metadata: Metadata = {
+  title: "Style guide",
+  description: "Structured tech / AI workflow: палитра, типографика, компоненты и состояния UI.",
+};
 
 const palette = [
   { name: "Фон / Graphite", token: "--color-bg", value: "#0a1020" },

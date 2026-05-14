@@ -3,6 +3,7 @@ export { Button } from "./Button";
 export { Card } from "./Card";
 export { Container } from "./Container";
 export { Divider } from "./Divider";
+export { FaqDisclosure } from "./FaqDisclosure";
 export { FaqItemShell } from "./FaqItemShell";
 export { FeatureItem } from "./FeatureItem";
 export { FieldLabel } from "./FieldLabel";
